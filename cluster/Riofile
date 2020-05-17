@@ -13,3 +13,11 @@ services:
      namespace: tools
     ports:
     - 5601/http
+  apm-server:
+    image: docker.elastic.co/apm/apm-server:7.6.2
+    metadata:
+     namespace: tools
+    env:
+    - output.elasticsearch.hosts=["elasticsearch:9200"]
+    ports:
+    - 8200/http    
