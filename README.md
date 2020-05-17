@@ -19,6 +19,13 @@ rio -n tools domain register els.xxxxxx.xxx elasticsearch
 rio -n tools domain register kibana.xxxxxx.xxx kibana
 ```
 
+
+Url for logger (.NET/...)
+```
+els.xxxxxx.xxx
+```
+
 ### TODO
 - [ ] map elasticsearch volume for storage (/usr/share/elasticsearch/data)
 - [ ] launch elasticsearch as cluster not single node
+- [ ] add authentification (basic)
