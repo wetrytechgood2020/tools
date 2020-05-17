@@ -20,5 +20,5 @@ rio -n tools domain register kibana.xxxxxx.xxx kibana
 ```
 
 ### TODO
-- [] map elasticsearch volume for storage (/usr/share/elasticsearch/data)
-- [] launch elasticsearch as cluster not single node
+- [ ] map elasticsearch volume for storage (/usr/share/elasticsearch/data)
+- [ ] launch elasticsearch as cluster not single node
