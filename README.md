@@ -33,8 +33,22 @@ Url for APM (.NET/...)
 apm.xxxxxx.xxx
 ```
 
+## Add montoring source
+Edit heartbeat.docker.yml
+```
+heartbeat.monitors:
+- type: http
+  schedule: '@every 5s'
+  urls:
+    - http://elasticsearch:9200
+    - http://kibana:5601
+    - https://myservice.xxxxx.xxx/health
+```
+=> Wait volume to file work during rio up.
+
 ### TODO
 - [ ] map elasticsearch volume for storage (/usr/share/elasticsearch/data)
 - [ ] launch elasticsearch as cluster not single node
 - [ ] add authentification (basic)
 - [X] add apm-server
+- [X] add heartbeat monitoring
