@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "SuperUser.Promoter": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "wetry-techgood-2020-firebase-adminsdk-n4167-52cce958ee.json",
+        "SU_EMAILS": "hantse1989@gmail.com,davgilson@live.fr"
+      }
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

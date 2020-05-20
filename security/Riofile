@@ -1,0 +1,8 @@
+services:
+    security-supromoter:
+        build:
+            dockerfile: ./src/SuperUser.Promoter/Dockerfile
+            context: ./  # Docker build context. Defaults to .
+        env:
+        - GOOGLE_APPLICATION_CREDENTIALS=wetry-techgood-2020-firebase-adminsdk-n4167-52cce958ee.json
+        - SU_EMAILS=hantse1989@gmail.com,davgilson@live.fr
