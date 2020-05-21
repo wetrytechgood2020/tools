@@ -33,6 +33,11 @@ Url for APM (.NET/...)
 apm.xxxxxx.xxx
 ```
 
+APM Server configuration can be edit in
+``` 
+apm-server.yml
+```
+
 ## Add montoring source
 Edit heartbeat.docker.yml
 ```
@@ -47,8 +52,10 @@ heartbeat.monitors:
 => Wait volume to file work during rio up.
 
 ### TODO
-- [ ] map elasticsearch volume for storage (/usr/share/elasticsearch/data)
+- [X] map elasticsearch volume for storage (/usr/share/elasticsearch/data) => work only if volume manager (longhorn here) is install
 - [ ] launch elasticsearch as cluster not single node
 - [ ] add authentification (basic)
 - [X] add apm-server
 - [X] add heartbeat monitoring
+- [X] add custom configuration for APM
+- [X] map heartbeat to configuration file

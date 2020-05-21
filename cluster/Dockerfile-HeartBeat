@@ -1,0 +1,5 @@
+FROM docker.elastic.co/beats/heartbeat:7.7.0
+COPY ./heartbeat.docker.yml /usr/share/heartbeat/heartbeat.yml
+USER root
+RUN chmod go-w /usr/share/heartbeat/heartbeat.yml
+RUN heartbeat test config -e
