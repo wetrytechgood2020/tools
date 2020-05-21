@@ -7,7 +7,6 @@ Elasticsearch and Kibana stack.
 Added APM for monitoring and uptime.
 
 ```
-cd cluster
 rio -n tools up --name logging-monitoring
 ```
 
