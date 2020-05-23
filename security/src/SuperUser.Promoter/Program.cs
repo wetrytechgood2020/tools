@@ -16,7 +16,7 @@ namespace SuperUser.Promoter
 
             FirebaseApp.Create(new AppOptions()
             {
-                Credential = GoogleCredential.GetApplicationDefault(),
+                Credential = GoogleCredential.GetApplicationDefault()
             });
 
             foreach (var email in emails)
