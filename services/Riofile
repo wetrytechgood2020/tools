@@ -1,0 +1,40 @@
+services:
+  api-gw:
+    imagePullPolicy: always
+    image: wetry/api-gw:latest
+    version: v0 
+    ports:
+      - 80/http    
+    env:
+      - ASPNETCORE_ENVIRONMENT=Development
+  service-school:
+    imagePullPolicy: always
+    image: wetry/service-school:latest
+    version: v0
+    scale: 2 
+    ports:
+      - 80/http  
+    env:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/firebaseadminsdk.json
+    secrets:
+      - firebase/firebaseadminsdk.json:/app/firebaseadminsdk.json
+  service-permission:
+    imagePullPolicy: always
+    image: wetry/service-permission:master
+    version: v0
+    scale: 2
+    ports:
+      - 6000/http      
+    secrets:
+      - firebase/firebaseadminsdk.json:/app/configuration/firebaseServiceAccountKey.json
+  service-user:
+    imagePullPolicy: always
+    image: wetry/service-user:master
+    version: v0
+    scale: 2
+    ports:
+      - 6000/http 
+    secrets:
+      - firebase/firebaseadminsdk.json:/app/configuration/firebaseServiceAccountKey.json
+            
