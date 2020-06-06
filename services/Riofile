@@ -37,7 +37,7 @@ services:
     version: v0
     scale: 2
     ports:
-      - 6000/http      
+      - 6000/http
     secrets:
       - firebase/firebaseadminsdk.json:/app/configuration/firebaseServiceAccountKey.json
   service-user:
@@ -46,7 +46,7 @@ services:
     version: v0
     scale: 2
     ports:
-      - 6000/http 
+      - 6000/http
     secrets:
       - firebase/firebaseadminsdk.json:/app/configuration/firebaseServiceAccountKey.json
             
