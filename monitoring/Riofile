@@ -1,0 +1,11 @@
+services:
+  dashboard:
+    imagePullPolicy: always
+    image: wetry/monitoring:latest
+    version: v0 
+    ports:
+      - 80/http    
+    env:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+            

@@ -19,6 +19,18 @@ services:
       - GOOGLE_APPLICATION_CREDENTIALS=/app/firebaseadminsdk.json
     secrets:
       - firebase/firebaseadminsdk.json:/app/firebaseadminsdk.json
+  service-notification:
+    imagePullPolicy: always
+    image: wetry/service-notification:latest
+    version: v0
+    scale: 2 
+    ports:
+      - 80/http  
+    env:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/firebaseadminsdk.json
+    secrets:
+      - firebase/firebaseadminsdk.json:/app/firebaseadminsdk.json      
   service-permission:
     imagePullPolicy: always
     image: wetry/service-permission:master
