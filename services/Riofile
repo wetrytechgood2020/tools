@@ -25,7 +25,8 @@ services:
     version: v0
     scale: 2 
     ports:
-      - 80/http  
+      - 80/http
+      - 6000
     env:
       - ASPNETCORE_ENVIRONMENT=Development
       - GOOGLE_APPLICATION_CREDENTIALS=/app/firebaseadminsdk.json
