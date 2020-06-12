@@ -1,4 +1,10 @@
 services:
+  landing:
+    imagePullPolicy: always
+    image: wetry/landing:latest
+    version: v0 
+    ports:
+      - 80/http    
   api-gw:
     imagePullPolicy: always
     image: wetry/api-gw:latest
@@ -50,4 +56,13 @@ services:
       - 6000/http
     secrets:
       - firebase/firebaseadminsdk.json:/app/configuration/firebaseServiceAccountKey.json
+  grpc-test-server:
+    imagePullPolicy: always
+    image: wetry/server-test-grpc:latest
+    version: v0 
+    ports:
+      - 80/http    
+    env:
+      - ASPNETCORE_ENVIRONMENT=Development   
+      
             

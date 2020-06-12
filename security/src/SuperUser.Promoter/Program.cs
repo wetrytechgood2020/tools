@@ -19,6 +19,16 @@ namespace SuperUser.Promoter
                 Credential = GoogleCredential.GetApplicationDefault()
             });
 
+
+            UserRecord createUser = await FirebaseAuth.DefaultInstance
+                                                        .GetUserByEmailAsync("test@wetrytechforgood.be");
+
+            var result = await FirebaseAuth.DefaultInstance.UpdateUserAsync(new UserRecordArgs()
+            {
+                Uid = createUser.Uid,
+                Password = "test0123"
+            });
+
             foreach (var email in emails)
             {
 
