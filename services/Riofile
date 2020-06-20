@@ -2,24 +2,24 @@ services:
   landing:
     imagePullPolicy: always
     image: wetry/landing:latest
-    version: v0 
+    version: v0
     ports:
-      - 80/http    
+      - 80/http
   api-gw:
     imagePullPolicy: always
     image: wetry/api-gw:latest
-    version: v0 
+    version: v0
     ports:
-      - 80/http    
+      - 80/http
     env:
       - ASPNETCORE_ENVIRONMENT=Development
   service-school:
     imagePullPolicy: always
     image: wetry/service-school:latest
     version: v0
-    scale: 2 
+    scale: 2
     ports:
-      - 80/http  
+      - 80/http
     env:
       - ASPNETCORE_ENVIRONMENT=Development
       - GOOGLE_APPLICATION_CREDENTIALS=/app/firebaseadminsdk.json
@@ -29,7 +29,7 @@ services:
     imagePullPolicy: always
     image: wetry/service-notification:latest
     version: v0
-    scale: 2 
+    scale: 2
     ports:
       - 80/http
       - 6000
@@ -37,7 +37,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - GOOGLE_APPLICATION_CREDENTIALS=/app/firebaseadminsdk.json
     secrets:
-      - firebase/firebaseadminsdk.json:/app/firebaseadminsdk.json      
+      - firebase/firebaseadminsdk.json:/app/firebaseadminsdk.json
   service-permission:
     imagePullPolicy: always
     image: wetry/service-permission:master
@@ -56,13 +56,18 @@ services:
       - 6000/http
     secrets:
       - firebase/firebaseadminsdk.json:/app/configuration/firebaseServiceAccountKey.json
+  service-storage:
+    imagePullPolicy: always
+    image: wetry/service-storage:master
+    version: v0
+    scale: 2
+    secrets:
+      - firebase/firebaseadminsdk.json:/app/configuration/firebaseServiceAccountKey.json
   grpc-test-server:
     imagePullPolicy: always
     image: wetry/server-test-grpc:latest
-    version: v0 
+    version: v0
     ports:
-      - 80/http    
+      - 80/http
     env:
-      - ASPNETCORE_ENVIRONMENT=Development   
-      
-            
+      - ASPNETCORE_ENVIRONMENT=Development
